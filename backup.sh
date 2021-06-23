@@ -9,6 +9,9 @@ filename="datenshi_backup_${dateNow}.zip" #edit this
 
 # Prosesssssssss
 echo "File backup belum ada dan mencoba untuk membuat backup"
+# Mount first
+google-drive-ocamlfuse ~/GDRIVE-BACKUP
+# Discord Message
 curl -X POST --data '{"content": "`[SERVER]` Memulai proses backup..."}' --header "Content-Type:application/json" $webhookDC
 sleep 3
 # Edit as you needed
@@ -19,4 +22,6 @@ sleep 3
 cp "$HOME/db_backup/$filename" ~/GDRIVE-BACKUP/backup/
 echo "Upload ke GoogleDrive Complete!"
 curl -X POST --data '{"content": "`[SERVER]` Backup **osu!** dan **minecraft** sudah selesai!"}' --header "Content-Type:application/json" $webhookDC
+# Unmount Drive
+fusermount -u ~/GDRIVE-BACKUP
 exit 0;
