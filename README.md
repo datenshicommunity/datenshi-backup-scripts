@@ -19,7 +19,7 @@ Make sure you already mount the google drive on your server before start this sc
 
 If you dont know how to mount it, go to [google-drive-ocamlfuse](https://github.com/astrada/google-drive-ocamlfuse) repository
 
-Then `cp crot.config crot.config`
+Then `cp crot.config.example crot.config`
 
 `crot.config`
 ```
