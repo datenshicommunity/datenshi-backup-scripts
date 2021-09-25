@@ -11,6 +11,12 @@ We do not use mysqldump because its dumb
 
 `./backup.sh`
 
+# Cronjob
+
+Start script every saturday in 23:00 PM
+
+`0  23   * * 6   root    tmux send-keys -t backup.0 "./backup.sh" ENTER`
+
 # Configuration
 
 Make sure you already mount the google drive on your server before start this scripts
